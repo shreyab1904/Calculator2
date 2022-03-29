@@ -1,25 +1,22 @@
 import Calculator
+import  pytest
 
-def test_add():
-    x=10
-    y=20
-    result=Calculator.add(x,y)
-    assert x+y==result
+@pytest.mark.parametrize("a,b,c",[(3,2,5),(10,12,22),(2,5,7),(7,8,15)])
+def test_add(a,b,c):
+    result=Calculator.add(a,b)
+    assert c==result
 
-def test_sub():
-    x=20
-    y=10
-    result=Calculator.sub(x,y)
-    assert x-y==result
+@pytest.mark.parametrize("a,b,c",[(3,2,1),(10,8,2)])
+def test_sub(a,b,c):
+    result=Calculator.sub(a,b)
+    assert c==result
 
-def test_mult():
-    x=2
-    y=5
-    result=Calculator.mult(x,y)
-    assert x*y==result
+@pytest.mark.parametrize("a,b,c",[(3,2,6),(2,5,10)])
+def test_mult(a,b,c):
+    result=Calculator.mult(a,b)
+    assert c==result
 
-def test_div():
-    x=10
-    y=2
-    result=Calculator.divide(x,y)
-    assert x/y==result
+@pytest.mark.parametrize("a,b,c",[(4,2,2),(10,5,2)])
+def test_div(a,b,c):
+    result=Calculator.divide(a,b)
+    assert c==result
